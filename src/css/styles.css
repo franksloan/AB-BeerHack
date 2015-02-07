@@ -352,9 +352,12 @@ button {
   transition: transform 0.25s, box-shadow 0.25s;
   margin-right: 10px; }
   /* line 73, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
+  .beer-select-item.missing {
+    display: none; }
+  /* line 77, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
   .beer-select-item:nth-child(even) {
     margin-right: 0; }
-  /* line 77, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
+  /* line 81, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
   .beer-select-item:hover {
     z-index: 2;
     -webkit-box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.075);
@@ -366,46 +369,58 @@ button {
     .beer-select-item {
       width: -webkit-calc( 33% - 5px);
       width: calc( 33% - 5px); }
-      /* line 86, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
+      /* line 90, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
       .beer-select-item:nth-child(even) {
         margin-right: 10px; }
-      /* line 90, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
+      /* line 94, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
       .beer-select-item:nth-child(3n) {
         margin-right: 0; } }
   @media screen and (min-width: 900px) {
     .beer-select-item {
       width: -webkit-calc( 25% - 10px);
       width: calc( 25% - 10px); }
-      /* line 98, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
+      /* line 102, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
       .beer-select-item:nth-child(3n) {
         margin-right: 10px; }
-      /* line 102, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
+      /* line 106, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
       .beer-select-item:nth-child(4n) {
         margin-right: 0; } }
   @media screen and (min-width: 1200px) {
     .beer-select-item {
       width: -webkit-calc( 20% - 10px);
       width: calc( 20% - 10px); }
-      /* line 110, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
+      /* line 114, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
       .beer-select-item:nth-child(4n) {
         margin-right: 10px; }
-      /* line 114, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
+      /* line 118, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
       .beer-select-item:nth-child(5n) {
         margin-right: 0; } }
 
-/* line 120, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
-.beer-select-img {
+/* line 124, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
+.beer-select-img-container {
   background: #e6e6e6;
   width: 100%;
   padding-bottom: 100%;
-  border-radius: 1px; }
+  border-radius: 1px;
+  position: relative;
+  overflow: hidden; }
 
-/* line 127, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
+/* line 133, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
+.beer-select-img {
+  position: absolute;
+  height: 90%;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%); }
+
+/* line 141, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
 .beer-select-name-container {
   height: 1.75rem;
   position: relative; }
 
-/* line 132, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
+/* line 146, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
 .beer-select-name {
   font-size: 0.8rem;
   line-height: 1.1;

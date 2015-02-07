@@ -70,6 +70,10 @@
   transition: transform .25s, box-shadow .25s;
   margin-right: 10px;
 
+  &.missing {
+    display: none;
+  }
+
   &:nth-child(even) {
     margin-right: 0;
   }
@@ -117,11 +121,21 @@
   }
 }
 
-.beer-select-img {
+.beer-select-img-container {
   background: hsl( 0, 0, 90 );
   width: 100%;
   padding-bottom: 100%;
   border-radius: 1px;
+  position: relative;
+  overflow: hidden;
+}
+
+.beer-select-img {
+  position: absolute;
+  height: 90%;
+  left: 50%;
+  top: 50%;
+  transform: translate( -50%, -50% );
 }
 
 .beer-select-name-container {
