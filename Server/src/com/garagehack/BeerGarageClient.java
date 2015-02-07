@@ -26,11 +26,15 @@ public class BeerGarageClient {
   public static String USERNAME = "ab-11";
   public static String PASSWORD = "IGmVCnLuMj9gNWsF";
 
-  public static String AUTH_TOKEN = "VNYcdeSwu3gEKw1r";
+  public static String AUTH_TOKEN = "VNY7VOSwu3gEKw8M";
 
   private static final Map<String, List<BeerDetails>> cache = new HashMap<>();
 
-  public static List<BeerDetails> queryBeerProfiles(String name)
+  public static List<BeerDetails> queryBeerProfiles(
+    String name,
+    String zone,
+    int offset
+  )
   throws IOException {
 
     // caching slow beer details
@@ -42,10 +46,13 @@ public class BeerGarageClient {
     while (!success) {
       try {
         String details = queryBeer(
-          AUTH_TOKEN, URLEncoder.encode(
+          AUTH_TOKEN,
+          URLEncoder.encode(
             name,
             "UTF-8"
-          )
+          ),
+          zone,
+          offset
         );
         Beers beers = beers(details);
         log.debug(
@@ -104,15 +111,20 @@ public class BeerGarageClient {
     return gson.fromJson(json, Beers.class);
   }
 
-  public static String queryBeer(String token, String term)
+  public static String queryBeer(
+    String token,
+    String term,
+    String zone,
+    int offset)
   throws IOException, GarageAuthException {
     Response response =
       Request.Get(
         String.format(
           "https://api.foodily" +
-            ".com/v1/beerLookup?name=%s&zone=EUR&limit=100" +
-            "(name),sourceRecipe(url)),pairings(*))",
-          term
+            ".com/v1/beerLookup?name=%s&zone=%s&limit=50&offset=%d",
+          term,
+          zone,
+          offset
         )
       ).addHeader(
         new BasicHeader(

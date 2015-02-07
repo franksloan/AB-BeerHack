@@ -69,7 +69,11 @@ public class Service implements Container {
       //double latitude = Double.parseDouble(coordinates[0]);
       //double longitude = Double.parseDouble(coordinates[1]);
 
-      List<BeerDetails> details = BeerGarageClient.queryBeerProfiles(name);
+      List<BeerDetails> details = BeerGarageClient.queryBeerProfiles(
+        name,
+        "EUR",
+        0
+      );
       BeerDetails beerDetails = details.isEmpty() ? new BeerDetails() :
         details.get(
           0
