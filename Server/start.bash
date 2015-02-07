@@ -5,7 +5,7 @@ mvn clean install
 mvn dependency:copy-dependencies
 
 echo 'Stopping server'
-ps aux | grep beergaragehack | awk '{print $2}' | kill -9
+ps aux | grep 'beergaragehack' | awk '{print $2}' | kill -9
 
 echo 'Starting server'
 
