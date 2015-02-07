@@ -14,7 +14,7 @@ public class GetAllBeers {
   public static void main(String[] args) throws IOException {
     String[] zones = new String[]{"NAZ", "EUR", "LAN", "LAS", "APAC", "MEX"};
     for (String zone : zones) {
-      for (int offset = 0; offset < 200; offset += 50) {
+      for (int offset = 0; offset < 300; offset += 50) {
         List<BeerDetails> details = BeerGarageClient.queryBeerProfiles(
           "",
           zone,
@@ -24,8 +24,9 @@ public class GetAllBeers {
           if (StringUtils.isNotBlank(b.getFlavorProfile())) {
             System.out.println(
               String.format(
-                "%s\t%s",
+                "%s\t%s\t%s",
                 b.getName(),
+                zone,
                 b.getFlavorProfile()
               )
             );
