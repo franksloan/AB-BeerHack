@@ -13,6 +13,7 @@ import org.apache.log4j.Logger;
 import org.json.JSONObject;
 
 import java.io.IOException;
+import java.net.URLEncoder;
 import java.util.*;
 
 /**
@@ -40,7 +41,12 @@ public class BeerGarageClient {
     boolean success = false;
     while (!success) {
       try {
-        String details = queryBeer(AUTH_TOKEN, name);
+        String details = queryBeer(
+          AUTH_TOKEN, URLEncoder.encode(
+            name,
+            "UTF-8"
+          )
+        );
         Beers beers = beers(details);
         log.debug(
           String.format(
