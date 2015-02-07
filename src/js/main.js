@@ -73,14 +73,16 @@
   // G maps
   function initialize() {
       var mapOptions = {
-        center: { lat: 51.5079, lng: -0.131782 },
+        center: { lat: 51.507351, lng: -0.127758 },
         zoom: 14,
         disableDefaultUI: true,
         styles: mapColors
       };
-      var map = new google.maps.Map(document.getElementById('map-canvas'),
+      
+      map = new google.maps.Map(document.getElementById('map-canvas'),
           mapOptions);
     }
+
     google.maps.event.addDomListener(window, 'load', initialize);
 
 }()); // end 'use strict'
