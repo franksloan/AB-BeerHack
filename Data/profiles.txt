@@ -1,0 +1,8 @@
+cider
+citrus_zesty
+floral
+fruity
+green_hoppy
+roasted_toasted
+spicy
+toffee_caramel
