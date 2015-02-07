@@ -1,6 +1,8 @@
 package com.garagehack.service;
 
+import com.garagehack.model.BeerDetails;
 import com.garagehack.response.Beer;
+import com.garagehack.response.Place;
 import com.google.gson.Gson;
 import org.simpleframework.http.Request;
 import org.simpleframework.http.Response;
@@ -14,6 +16,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
+import java.util.Arrays;
 
 /**
  * @author Maxim Galushka
@@ -38,7 +41,19 @@ public class Service implements Container {
       headers(response);
       PrintStream body = null;
       body = response.getPrintStream();
-      Beer beerResponse = new Beer(null, null, null);
+      Beer beerResponse = new Beer(
+        "Budweiser",
+        new BeerDetails(
+          "sweet",
+          Arrays.asList(new String[]{"UK"}),
+          ""
+        ),
+        Arrays.asList(
+          new Place[]{
+            new Place("", "Indian", 0.0, 0.0)
+          }
+        )
+      );
 
       body.println(gson.toJson(beerResponse));
       body.close();
