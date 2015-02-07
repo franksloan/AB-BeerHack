@@ -149,7 +149,7 @@ public class Service implements Container {
 
       body.println(gson.toJson(beerResponse));
       body.close();
-    } catch (IOException e) {
+    } catch (Exception e) {
       e.printStackTrace();
     }
   }
