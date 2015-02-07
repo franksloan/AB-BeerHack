@@ -1,0 +1,86 @@
+//===============================================================================
+// SHARED
+//===============================================================================
+// box-sizing everywhere and webkit text rendering correction
+*,
+*::before,
+*:after {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: $paper;
+  color: $ink;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1rem;
+  line-height: 1.4;
+  overflow-x: hidden;
+}
+
+.wrap {
+  position: absolute;
+  width: 400%;
+  height: 100%;
+  transition: left .35s cubic-bezier(0, 1.1, 0.9, 1.1);
+
+  &.pos-1 {
+    left: 0;
+  }
+
+  &.pos-2 {
+    left: -100%;
+  }
+
+  &.pos-3 {
+    left: -200%;
+  }
+
+  &.pos-4 {
+    left: -300%;
+  }
+}
+
+.page {
+  position: absolute;
+  width: 25%;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  background-color: $ab-light-orange;
+
+  &:nth-child(even) {
+    background-color: $ab-dark-orange;
+  }
+}
+
+.branding {
+  padding: 15px;
+
+  h1 {
+    font-size: 11vw;
+    margin: 0;
+    font-weight: 900;
+    text-align: center;
+    color: hsl( 3, 60, 57 );
+    text-shadow: 1px 1px 0 mix( white, $ab-light-orange, 90 ),
+                 2px 2px 0 mix( white, $ab-light-orange, 90 ),
+                 3px 3px 0 mix( white, $ab-light-orange, 90 );
+
+    @media screen and ( min-width: 450px ) {
+      font-size: 3rem;
+    }
+  }
+}

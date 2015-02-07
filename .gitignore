@@ -1,3 +1,23 @@
 /Server/target
 /Server/*.iml
 /Server/.idea
+
+
+# Sass
+.sass-cache⏎
+
+
+# Node.js
+lib-cov
+*.seed
+*.log
+*.dat
+*.out
+*.pid
+*.gz
+
+pids
+logs
+
+npm-debug.log
+/node_modules
