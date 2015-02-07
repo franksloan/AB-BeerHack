@@ -1,3 +1,4 @@
 /Server/target
 /Server/*.iml
 /Server/.idea
+/Server/*.log
