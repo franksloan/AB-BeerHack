@@ -20,7 +20,8 @@ public class QueryPlacesNearby {
     String results = yelp.searchForBusinessesByLocation(
       "byob",
       "London",
-      "51.5033630,-0.1276250"
+      "51.5033630,-0.1276250",
+      ""
     );
 
     Gson gson = new Gson();

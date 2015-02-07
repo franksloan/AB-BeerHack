@@ -26,7 +26,7 @@ public class BeerGarageClient {
   public static String USERNAME = "ab-11";
   public static String PASSWORD = "IGmVCnLuMj9gNWsF";
 
-  public static String AUTH_TOKEN = "VNY7VOSwu3gEKw8M";
+  public static String AUTH_TOKEN = "VNZZ+OSwxNMAJ+G2";
 
   private static final Map<String, List<BeerDetails>> cache = new HashMap<>();
 

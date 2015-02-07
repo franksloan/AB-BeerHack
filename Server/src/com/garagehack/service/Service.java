@@ -20,7 +20,7 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Maxim Galushka
@@ -28,6 +28,8 @@ import java.util.List;
 public class Service implements Container {
 
   public static final Logger log = Logger.getLogger(Service.class);
+
+  private Map<String, List<String>> cousines = new HashMap<>();
 
   private final YelpAPI yelp;
 
@@ -38,6 +40,46 @@ public class Service implements Container {
       YelpAPI.TOKEN,
       YelpAPI.TOKEN_SECRET
     );
+
+    cousines.put(
+      "citrus_zesty",
+      Arrays.asList("caribbean", "indian", "russian", "turkish")
+    );
+    cousines.put(
+      "fruity",
+      Arrays.asList(
+        "fishnchips",
+        "indian",
+        "persian",
+        "iranian",
+        "thai",
+        "vietnamese"
+      )
+    );
+    cousines.put(
+      "green_hoppy",
+      Arrays.asList("barbeque", "caribbean", "turkish")
+    );
+    cousines.put(
+      "roasted_toasted",
+      Arrays.asList("barbeque", "indian", "moroccan", "turkish")
+    );
+    cousines.put(
+      "spicy",
+      Arrays.asList("indian", "turkish")
+    );
+    cousines.put(
+      "toffee_caramel",
+      Arrays.asList(
+        "caribbean",
+        "indian",
+        "persian",
+        "iranian",
+        "russian",
+        "turkish"
+      )
+    );
+
   }
 
   public void headers(Response response) {
@@ -79,10 +121,21 @@ public class Service implements Container {
           0
         );
 
+      String profile = beerDetails.getFlavorProfile();
+
+      List<String> filterCategories = (profile !=
+        null) ? cousines.get(profile) : Collections.emptyList();
+
+      StringJoiner joiner = new StringJoiner(",");
+      for (String cats : filterCategories) {
+        joiner.add(cats);
+      }
+
       String yelpPlaces = yelp.searchForBusinessesByLocation(
         "byob",
         "London",
-        location
+        location,
+        joiner.toString()
       );
       Businesses business = gson.fromJson(yelpPlaces, Businesses.class);
 

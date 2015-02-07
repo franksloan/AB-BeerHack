@@ -2,6 +2,7 @@ package com.garagehack;
 
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
+import org.apache.commons.lang.StringUtils;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -13,8 +14,7 @@ import org.scribe.model.Token;
 import org.scribe.model.Verb;
 import org.scribe.oauth.OAuthService;
 
-import java.util.HashMap;
-import java.util.Map;
+import java.util.*;
 
 /**
  * Code sample for accessing the Yelp API V2.
@@ -86,7 +86,8 @@ public class YelpAPI {
   public String searchForBusinessesByLocation(
     String term,
     String location,
-    String coordinates
+    String coordinates,
+    String categories
   ) {
     if (cache.containsKey(term)) {
       return cache.get(term);
@@ -95,7 +96,11 @@ public class YelpAPI {
     OAuthRequest request = createOAuthRequest(SEARCH_PATH);
     request.addQuerystringParameter("term", term);
     request.addQuerystringParameter("location", location);
+    if (StringUtils.isNotBlank(categories)) {
+      request.addQuerystringParameter("category_filter", categories);
+    }
     request.addQuerystringParameter("cll", coordinates);
+
     request.addQuerystringParameter("limit", String.valueOf(SEARCH_LIMIT));
 
     String json = sendRequestAndGetResponse(request);
@@ -159,6 +164,7 @@ public class YelpAPI {
       yelpApi.searchForBusinessesByLocation(
         yelpApiCli.term,
         yelpApiCli.location,
+        "",
         ""
       );
 
