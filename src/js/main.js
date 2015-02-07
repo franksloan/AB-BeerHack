@@ -74,7 +74,7 @@
   function initialize() {
       var mapOptions = {
         center: { lat: 51.507351, lng: -0.127758 },
-        zoom: 14,
+        zoom: 13,
         disableDefaultUI: true,
         styles: mapColors
       };

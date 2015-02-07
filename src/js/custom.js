@@ -37,7 +37,7 @@ function search(name, locationLat, locationLong) {
 
 			var position = new google.maps.LatLng(listing.latitude, listing.longitude);
 			var infowindow = new google.maps.InfoWindow({
-				content: "<p><strong>Name: </strong>" + listing.name + "<br /><strong>Address: </strong>" + listing.address + "</p>"
+				content: "<p><strong>Name: </strong>" + listing.name + "<br /><strong>Address: </strong>" + listing.address + "<br /><strong>Phone Number: </strong>" + listing.phone + "</p>"
 			});
 
 			var marker = new google.maps.Marker({
