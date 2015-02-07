@@ -7,12 +7,23 @@ public class Place {
 
   private String name;
   private String cuisine;
+  private String address;
+  private String phone;
   private double latitude;
   private double longitude;
 
-  public Place(String name, String cuisine, double latitude, double longitude) {
+  public Place(
+    String name,
+    String cuisine,
+    String address,
+    String phone,
+    double latitude,
+    double longitude
+  ) {
     this.name = name;
     this.cuisine = cuisine;
+    this.address = address;
+    this.phone = phone;
     this.latitude = latitude;
     this.longitude = longitude;
   }
@@ -31,6 +42,22 @@ public class Place {
 
   public void setCuisine(String cuisine) {
     this.cuisine = cuisine;
+  }
+
+  public String getAddress() {
+    return address;
+  }
+
+  public void setAddress(String address) {
+    this.address = address;
+  }
+
+  public String getPhone() {
+    return phone;
+  }
+
+  public void setPhone(String phone) {
+    this.phone = phone;
   }
 
   public double getLatitude() {
@@ -54,6 +81,8 @@ public class Place {
     return "Place{" +
       "name='" + name + '\'' +
       ", cuisine='" + cuisine + '\'' +
+      ", address='" + address + '\'' +
+      ", phone='" + phone + '\'' +
       ", latitude=" + latitude +
       ", longitude=" + longitude +
       '}';

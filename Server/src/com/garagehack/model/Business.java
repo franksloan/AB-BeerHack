@@ -21,17 +21,20 @@ public class Business {
 
   private String[][] categories;
 
-
-
-  @Override
-  public String toString() {
-    return "Business{" +
-      "name='" + name + '\'' +
-      ", imageUrl='" + imageUrl + '\'' +
-      ", description='" + description + '\'' +
-      ", location=" + location +
-      ", phone='" + phone + '\'' +
-      '}';
+  public Business(
+    String name,
+    String imageUrl,
+    String description,
+    Location location,
+    String phone,
+    String[][] categories
+  ) {
+    this.name = name;
+    this.imageUrl = imageUrl;
+    this.description = description;
+    this.location = location;
+    this.phone = phone;
+    this.categories = categories;
   }
 
   public String getName() {
@@ -82,21 +85,15 @@ public class Business {
     this.categories = categories;
   }
 
-  public Business(
-    String name,
-    String imageUrl,
-    String description,
-    Location location,
-    String phone,
-    String[][] categories
-  ) {
-    this.name = name;
-    this.imageUrl = imageUrl;
-    this.description = description;
-    this.location = location;
-    this.phone = phone;
-    this.categories = categories;
+  @Override
+  public String toString() {
+    return "Business{" +
+      "name='" + name + '\'' +
+      ", imageUrl='" + imageUrl + '\'' +
+      ", description='" + description + '\'' +
+      ", location=" + location +
+      ", phone='" + phone + '\'' +
+      '}';
   }
-
 
 }
