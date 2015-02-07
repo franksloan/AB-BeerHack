@@ -11,6 +11,9 @@ public class BeerDetails {
   private List<String> countries;
   private String flavorProfile;
 
+  public BeerDetails() {
+  }
+
   public BeerDetails(String flavorProfile, List<String> countries, String name) {
     this.flavorProfile = flavorProfile;
     this.countries = countries;
@@ -39,5 +42,14 @@ public class BeerDetails {
 
   public void setFlavorProfile(String flavorProfile) {
     this.flavorProfile = flavorProfile;
+  }
+
+  @Override
+  public String toString() {
+    return "BeerDetails{" +
+      "name='" + name + '\'' +
+      ", countries=" + countries +
+      ", flavorProfile='" + flavorProfile + '\'' +
+      '}';
   }
 }

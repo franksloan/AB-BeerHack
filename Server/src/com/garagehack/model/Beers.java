@@ -20,4 +20,11 @@ public class Beers {
   public void setBeers(List<BeerDetails> beers) {
     this.beers = beers;
   }
+
+  @Override
+  public String toString() {
+    return "Beers{" +
+      "beers=" + beers +
+      '}';
+  }
 }

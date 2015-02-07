@@ -1,9 +1,13 @@
 package com.garagehack.service;
 
+import com.garagehack.BeerGarageClient;
+import com.garagehack.YelpAPI;
 import com.garagehack.model.BeerDetails;
+import com.garagehack.model.Businesses;
 import com.garagehack.response.Beer;
-import com.garagehack.response.Place;
 import com.google.gson.Gson;
+import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
 import org.simpleframework.http.Request;
 import org.simpleframework.http.Response;
 import org.simpleframework.http.core.Container;
@@ -16,12 +20,25 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
-import java.util.Arrays;
+import java.util.List;
 
 /**
  * @author Maxim Galushka
  */
 public class Service implements Container {
+
+  public static final Logger log = Logger.getLogger(Service.class);
+
+  private final YelpAPI yelp;
+
+  public Service() {
+    yelp = new YelpAPI(
+      YelpAPI.CONSUMER_KEY,
+      YelpAPI.CONSUMER_SECRET,
+      YelpAPI.TOKEN,
+      YelpAPI.TOKEN_SECRET
+    );
+  }
 
   public void headers(Response response) {
     long time = System.currentTimeMillis();
@@ -38,21 +55,39 @@ public class Service implements Container {
   ) {
     try {
       Gson gson = new Gson();
+
+      String name = request.getParameter("name");
+      name = StringUtils.isNotBlank(name) ? name : "Budweiser";
+      log.debug(String.format("Name = [%s]", name));
+
+      String location = request.getParameter("location");
+      location = StringUtils.isNotBlank(location) ? location :
+        "51.5033630,-0.1276250";
+      log.debug(String.format("Location = [%s]", location));
+
+      //String[] coordinates = location.split(",");
+      //double latitude = Double.parseDouble(coordinates[0]);
+      //double longitude = Double.parseDouble(coordinates[1]);
+
+      List<BeerDetails> details = BeerGarageClient.queryBeerProfiles(name);
+      BeerDetails beerDetails = details.isEmpty() ? new BeerDetails() :
+        details.get(
+          0
+        );
+
+      String yelpPlaces = yelp.searchForBusinessesByLocation(
+        "byob",
+        "London",
+        location
+      );
+      Businesses business = gson.fromJson(yelpPlaces, Businesses.class);
+
       headers(response);
-      PrintStream body = null;
-      body = response.getPrintStream();
+      PrintStream body = response.getPrintStream();
       Beer beerResponse = new Beer(
-        "Budweiser",
-        new BeerDetails(
-          "sweet",
-          Arrays.asList(new String[]{"UK"}),
-          ""
-        ),
-        Arrays.asList(
-          new Place[]{
-            new Place("", "Indian", 0.0, 0.0)
-          }
-        )
+        name,
+        beerDetails,
+        business.places()
       );
 
       body.println(gson.toJson(beerResponse));
@@ -69,5 +104,7 @@ public class Service implements Container {
 
     SocketAddress address = new InetSocketAddress(8081);
     connection.connect(address);
+
+    log.debug("Service started");
   }
 }

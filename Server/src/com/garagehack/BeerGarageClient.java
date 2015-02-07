@@ -1,48 +1,61 @@
 package com.garagehack;
 
+import com.garagehack.model.BeerDetails;
 import com.garagehack.model.Beers;
 import com.google.gson.Gson;
+import org.apache.http.client.HttpResponseException;
 import org.apache.http.client.fluent.Content;
 import org.apache.http.client.fluent.Form;
 import org.apache.http.client.fluent.Request;
 import org.apache.http.client.fluent.Response;
 import org.apache.http.message.BasicHeader;
+import org.apache.log4j.Logger;
 import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.Base64;
+import java.util.Collections;
+import java.util.List;
 
 /**
  * @author Maxim Galushka
  */
-public class Client {
+public class BeerGarageClient {
+
+  public static final Logger log = Logger.getLogger(BeerGarageClient.class);
 
   public static String USERNAME = "ab-11";
   public static String PASSWORD = "IGmVCnLuMj9gNWsF";
 
-  public static String AUTH_TOKEN = "VNX2SOSwxNMAJ934";
+  public static String AUTH_TOKEN = "VNYcdeSwu3gEKw1r";
 
-  public static void main(String[] args) throws IOException {
-
-    //String accessToken = getAccessToken();
-    //{"Authorization":"Bearer VNX3guSwu3gEKwyZ"}
+  public static List<BeerDetails> queryBeerProfiles(String name)
+  throws IOException {
     boolean success = false;
     while (!success) {
       try {
-        String details = queryBeer(AUTH_TOKEN, "Budweiser");
-
-        //System.out.println(stella.toString());
-        System.out.println(beers(details));
-        success = true;
+        String details = queryBeer(AUTH_TOKEN, name);
+        Beers beers = beers(details);
+        log.debug(
+          String.format(
+            "List of beers: [%s]",
+            beers
+          )
+        );
+        return beers.getBeers();
       } catch (GarageAuthException authError) {
         try {
           // reset token
+          log.error("Token invalid reset");
           AUTH_TOKEN = getAccessToken();
+          log.debug(String.format("New token: [%s]", AUTH_TOKEN));
         } catch (Exception ex) {
+          log.error("Cannot auth for 2nd time. Drop off.");
           success = true;
         }
       }
     }
+    return Collections.emptyList();
   }
 
 
@@ -93,13 +106,11 @@ public class Client {
           String.format("Bearer %s", token)
         )
       ).execute();
-    Content content = response.returnContent();
-    if (Content.NO_CONTENT.equals(content)) {
+    try {
+      Content content = response.returnContent();
+      return content.asString();
+    } catch (HttpResponseException unauth) {
       throw new GarageAuthException("auth again");
     }
-
-   return content.asString();
-    //return new JSONObject(tokenResponse);
-
   }
 }

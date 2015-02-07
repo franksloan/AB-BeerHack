@@ -9,7 +9,7 @@ kill -9 `ps aux | grep 'beergaragehack' | awk '{print $2}'`
 
 echo 'Starting server'
 
-CLASSPATH="./target/dependency/*:./target/beergaragehack-1.0.jar"
+CLASSPATH="./lib/jcommander-1.35.jar:./lib/json_simple-1.1.jar:./lib/scribe-1.3.5.jar:./target/dependency/*:./target/beergaragehack-1.0.jar"
 JAVA_MEM="-Xms256m -Xmx256m"
 JAVA_GC="-verbose:gc"
 
