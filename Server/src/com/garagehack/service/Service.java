@@ -52,7 +52,7 @@ public class Service implements Container {
         "indpak",
         "persian",
         "thai",
-        "vietnamese"
+          "vietnamese"
       )
     );
     cousines.put(
@@ -125,8 +125,10 @@ public class Service implements Container {
         null) ? cousines.get(profile) : Collections.emptyList();
 
       StringJoiner joiner = new StringJoiner(",");
-      for (String cats : filterCategories) {
-        joiner.add(cats);
+      if(filterCategories != null) {
+        for (String cats : filterCategories) {
+          joiner.add(cats);
+        }
       }
 
       String yelpPlaces = yelp.searchForBusinessesByLocation(
