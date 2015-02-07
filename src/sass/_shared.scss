@@ -9,6 +9,11 @@
   -webkit-font-smoothing: antialiased;
 }
 
+a {
+  font-weight: 600;
+  color: hsl( 220, 100, 50 );
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -95,7 +100,6 @@ button {
   font-weight: 500;
   font-size: 1.3rem;
   box-shadow: 5px 5px 0 0 rgba( black, .075 );
-  margin-right: 4px;
   transition: all .25s;
   transform: translate3d(0,0,0) scale( 1 );
 

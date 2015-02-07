@@ -197,12 +197,17 @@ td, th {
   -webkit-font-smoothing: antialiased; }
 
 /* line 12, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
+a {
+  font-weight: 600;
+  color: #0055ff; }
+
+/* line 17, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
 ul {
   margin: 0;
   padding: 0;
   list-style: none; }
 
-/* line 19, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
+/* line 24, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
 html, body {
   margin: 0;
   padding: 0;
@@ -216,27 +221,27 @@ html, body {
   line-height: 1.4;
   overflow-x: hidden; }
 
-/* line 33, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
+/* line 38, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
 .wrap {
   position: absolute;
   width: 400%;
   height: 100%;
   -webkit-transition: left 0.25s;
   transition: left 0.25s; }
-  /* line 39, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
+  /* line 44, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
   .wrap.pos-1 {
     left: 0; }
-  /* line 43, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
+  /* line 48, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
   .wrap.pos-2 {
     left: -100%; }
-  /* line 47, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
+  /* line 52, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
   .wrap.pos-3 {
     left: -200%; }
-  /* line 51, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
+  /* line 56, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
   .wrap.pos-4 {
     left: -300%; }
 
-/* line 56, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
+/* line 61, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
 .page {
   position: absolute;
   width: 25%;
@@ -244,14 +249,14 @@ html, body {
   overflow-x: hidden;
   overflow-y: scroll;
   background-color: #ecd68d; }
-  /* line 64, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
+  /* line 69, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
   .page:nth-child(even) {
     background-color: #ebbc81; }
 
-/* line 69, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
+/* line 74, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
 .branding {
   padding: 15px; }
-  /* line 72, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
+  /* line 77, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
   .branding h1 {
     font-size: 11vw;
     margin: 0;
@@ -263,7 +268,7 @@ html, body {
       .branding h1 {
         font-size: 3rem; } }
 
-/* line 88, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
+/* line 93, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
 button {
   appearance: none;
   border: 0 solid white;
@@ -275,12 +280,11 @@ button {
   font-size: 1.3rem;
   -webkit-box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.075);
   box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.075);
-  margin-right: 4px;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
   -webkit-transform: translate3d(0, 0, 0) scale(1);
   transform: translate3d(0, 0, 0) scale(1); }
-  /* line 102, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
+  /* line 106, /Users/markdurrant/repos/AB-BeerHack/src/sass/_shared.scss */
   button:hover {
     z-index: 2;
     -webkit-box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.1);
@@ -432,9 +436,71 @@ button {
 
 /* line 4, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-info.scss */
 .page.beer-info {
-  left: 25%; }
+  left: 25%;
+  padding-bottom: 30px; }
 
-/* line 32, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-info.scss */
+/* line 9, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-info.scss */
+.beer-info-content {
+  background: white;
+  border-radius: 2px;
+  -webkit-box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 5px 5px 0 0 rgba(0, 0, 0, 0.05);
+  margin: 15px;
+  padding: 15px; }
+  @media screen and (min-width: 600px) {
+    .beer-info-content {
+      margin: 15px 30px; } }
+  @media screen and (min-width: 900px) {
+    .beer-info-content {
+      margin: 15px 60px; } }
+  @media screen and (min-width: 1200px) {
+    .beer-info-content {
+      margin: 15px 90px; } }
+
+/* line 29, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-info.scss */
+.beer-info-img {
+  float: left;
+  max-width: 33.3333%;
+  margin-right: 5px;
+  margin-bottom: 1rem;
+  max-height: 300px; }
+
+/* line 37, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-info.scss */
+.beer-info-name {
+  margin: 0.2rem 0 1rem;
+  line-height: 1;
+  font-size: 2.5rem; }
+
+/* line 46, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-info.scss */
+label.beer-info-grains, label.beer-info-flavour, label.beer-info-abv {
+  font-weight: 300;
+  display: block; }
+  /* line 50, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-info.scss */
+  label.beer-info-grains::after, label.beer-info-flavour::after, label.beer-info-abv::after {
+    content: ": "; }
+
+/* line 57, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-info.scss */
+span.beer-info-grains, span.beer-info-flavour, span.beer-info-abv {
+  display: block;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 1.1; }
+  @media screen and (min-width: 900px) {
+    span.beer-info-grains, span.beer-info-flavour, span.beer-info-abv {
+      width: 33%; } }
+
+/* line 69, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-info.scss */
+span.beer-info-abv::after {
+  content: "%"; }
+
+/* line 73, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-info.scss */
+.beer-info-description {
+  font-size: 0.9rem;
+  display: block;
+  clear: both; }
+
+/* line 86, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-info.scss */
 .beer-info-btn-container {
   padding: 0 15px; }
   /* line 8, /Users/markdurrant/repos/AB-BeerHack/src/sass/_mixins.scss */
@@ -452,16 +518,16 @@ button {
     .beer-info-btn-container {
       padding: 0 90px; } }
 
-/* line 50, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-info.scss */
+/* line 104, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-info.scss */
 .beer-info-back {
   float: left; }
 
-/* line 54, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-info.scss */
+/* line 108, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-info.scss */
 .beer-info-find {
   float: right;
   background: #e93e35;
   color: white; }
-  /* line 59, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-info.scss */
+  /* line 113, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-info.scss */
   .beer-info-find:hover {
     background: #d32117; }
 
