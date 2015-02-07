@@ -37,7 +37,7 @@ function search(name, locationLat, locationLong) {
 
 			var position = new google.maps.LatLng(listing.latitude, listing.longitude);
 			var infowindow = new google.maps.InfoWindow({
-				content: "<p><strong>Name: </strong>" + listing.name + "<br /><strong>Address: </strong>" + listing.address + "<br /><strong>Phone Number: </strong>" + listing.phone + "</p>"
+				content: '<p><strong>Name: </strong>' + listing.name + '<br /><strong>Address: </strong><a href="http://maps.apple.com/?daddr=' + encodeURIComponent(listing.address) + '">' + listing.address + '</a><br /><strong>Phone Number: </strong><a href="tel:'+ listing.phone +'">' + listing.phone + '</a></p>'
 			});
 
 			var marker = new google.maps.Marker({
