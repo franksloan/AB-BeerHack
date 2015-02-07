@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo 'Making new build'
-mvn clean install
+mvn install
 mvn dependency:copy-dependencies
 
 echo 'Stopping server'
