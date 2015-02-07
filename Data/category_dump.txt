@@ -1,0 +1,389 @@
+spicy
+Coffee & Tea
+Breakfast & Brunch
+British
+Mediterranean
+Modern European
+Cafes
+Diners
+Turkish
+Organic Stores
+French
+Brasseries
+American (Traditional)
+Tea Rooms
+Belgian
+Burgers
+Bakeries
+Sandwiches
+Peruvian
+Italian
+Pizza
+Middle Eastern
+Portuguese
+Music Venues
+Steakhouses
+Bars
+Specialty Food
+Cooking Schools
+Gastropubs
+Bistros
+Vegetarian
+Wine Bars
+Bikes
+Jazz & Blues
+Cocktail Bars
+Pubs
+Food Stands
+Farmers Market
+Fruits & Veggies
+Market Stalls
+Street Vendors
+Delis
+Cheese Shops
+Mexican
+African
+Chocolatiers & Shops
+Bagels
+Desserts
+Patisserie/Cake Shop
+Dim Sum
+Fast Food
+Caterers
+Gluten-Free
+Indian
+Restaurants
+Bowling
+American (New)
+Venues & Event Spaces
+Tapas/Small Plates
+Chicken Wings
+Latin American
+Kosher
+Persian/Iranian
+Seafood
+Wineries
+Japanese
+Ethnic Food
+
+fruity
+Chinese
+Buffets
+Dim Sum
+Asian Fusion
+Food Stands
+Street Vendors
+Chicken Wings
+Modern European
+American (New)
+British
+Steakhouses
+Delis
+Food Delivery Services
+Cafes
+French
+Belgian
+Spanish
+Fish & Chips
+Seafood
+Bars
+Gastropubs
+Coffee & Tea
+Breakfast & Brunch
+American (Traditional)
+Pubs
+Food
+Brasseries
+Tapas Bars
+Basque
+Cocktail Bars
+Soul Food
+Sandwiches
+Fast Food
+Wine Bars
+Japanese
+Sushi Bars
+Latin American
+Polish
+Italian
+Barbeque
+Tapas/Small Plates
+Korean
+Middle Eastern
+Tea Rooms
+Mediterranean
+Gluten-Free
+Pizza
+Butcher
+Thai
+Indian
+Pakistani
+Halal
+Singaporean
+Malaysian
+Vietnamese
+Ice Cream & Frozen Yogurt
+Vegetarian
+Vegan
+Turkish
+Afghan
+Hotels
+Dance Clubs
+German
+Austrian
+Fondue
+Greek
+Persian/Iranian
+Argentine
+African
+Ethiopian
+Desserts
+Bistros
+
+green_hoppy
+Steakhouses
+Burgers
+British
+Pubs
+Bars
+American (New)
+American (Traditional)
+Desserts
+Ice Cream & Frozen Yogurt
+Belgian
+Dance Clubs
+Music Venues
+Bakeries
+Modern European
+Brasseries
+Seafood
+Barbeque
+Diners
+Wine Bars
+Halal
+Mexican
+Food Stands
+Fast Food
+Tex-Mex
+Street Vendors
+Food Trucks
+Italian
+Gastropubs
+Coffee & Tea
+Scandinavian
+Breakfast & Brunch
+Lounges
+Jazz & Blues
+Delis
+Japanese
+Sushi Bars
+Grocery
+Health Markets
+French
+Hotels
+Cafes
+Peruvian
+Juice Bars & Smoothies
+Vegan
+Food
+Vegetarian
+Fruits & Veggies
+Mediterranean
+Gluten-Free
+Specialty Food
+Cocktail Bars
+Argentine
+Butcher
+Turkish
+Tea Rooms
+
+roasted_toasted
+Ice Cream & Frozen Yogurt
+Indian
+Vegetarian
+Vegan
+Pakistani
+Halal
+Cocktail Bars
+Cafes
+Sandwiches
+Latin American
+Mexican
+Food Stands
+Malaysian
+Coffee & Tea
+Italian
+Portuguese
+Chicken Wings
+French
+Fast Food
+Mediterranean
+Modern European
+American (Traditional)
+Barbeque
+Diners
+Turkish
+Persian/Iranian
+Restaurants
+Bars
+Thai
+Music Venues
+Burgers
+Tea Rooms
+Sushi Bars
+Spanish
+Japanese
+Lounges
+British
+Seafood
+Brasseries
+American (New)
+Delis
+Bakeries
+Breakfast & Brunch
+Pubs
+Delicatessen
+Caterers
+Desserts
+Chocolatiers & Shops
+Gastropubs
+Argentine
+Arabian
+
+citrus_zesty
+Pubs
+Cocktail Bars
+Dance Clubs
+Tapas/Small Plates
+Wine Bars
+Vegetarian
+Himalayan/Nepalese
+Indian
+Italian
+Bars
+Delis
+French
+Beer, Wine & Spirits
+Coffee & Tea
+Pizza
+Modern European
+Cafes
+Bakeries
+Delicatessen
+Vegan
+Sandwiches
+Salad
+Gluten-Free
+Mediterranean
+Greek
+Brazilian
+Venues & Event Spaces
+Ice Cream & Frozen Yogurt
+Pakistani
+Halal
+Gastropubs
+Russian
+Breakfast & Brunch
+Tapas Bars
+Spanish
+American (Traditional)
+Burgers
+British
+Fish & Chips
+Seafood
+Steakhouses
+Fast Food
+Arts & Entertainment
+Basque
+Chinese
+Szechuan
+Bagels
+Japanese
+Asian Fusion
+Sushi Bars
+Mexican
+Tex-Mex
+Middle Eastern
+Portuguese
+Diners
+Music Venues
+Specialty Food
+Austrian
+German
+Hot Dogs
+Turkish
+Korean
+Polish
+Art Galleries
+Museums
+American (New)
+
+toffee_caramel
+Array
+Pubs
+Cocktail Bars
+Dance Clubs
+Tapas/Small Plates
+Wine Bars
+Vegetarian
+Himalayan/Nepalese
+Indian
+Italian
+Bars
+Delis
+French
+Beer, Wine & Spirits
+Coffee & Tea
+Pizza
+Modern European
+Cafes
+Bakeries
+Delicatessen
+Vegan
+Sandwiches
+Salad
+Gluten-Free
+Mediterranean
+Greek
+Brazilian
+Venues & Event Spaces
+Ice Cream & Frozen Yogurt
+Pakistani
+Halal
+Gastropubs
+Russian
+Breakfast & Brunch
+Tapas Bars
+Spanish
+American (Traditional)
+Burgers
+British
+Fish & Chips
+Seafood
+Steakhouses
+Fast Food
+Arts & Entertainment
+Basque
+Chinese
+Szechuan
+Bagels
+Japanese
+Asian Fusion
+Sushi Bars
+Mexican
+Tex-Mex
+Middle Eastern
+Portuguese
+Diners
+Music Venues
+Specialty Food
+Austrian
+German
+Hot Dogs
+Turkish
+Korean
+Polish
+Art Galleries
+Museums
+American (New)
+
