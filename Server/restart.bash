@@ -18,4 +18,5 @@ JAVA_GC="-verbose:gc"
 
 nohup java -cp ${CLASSPATH} ${JAVA_MEM} ${JAVA_GC} com.garagehack.service.Service > out.log 2>&1 &
 
+sleep 0.5
 ./cache.bash
