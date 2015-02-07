@@ -43,38 +43,36 @@ public class Service implements Container {
 
     cousines.put(
       "citrus_zesty",
-      Arrays.asList("caribbean", "indian", "russian", "turkish")
+      Arrays.asList("caribbean", "indpak", "russian", "turkish")
     );
     cousines.put(
       "fruity",
       Arrays.asList(
         "fishnchips",
-        "indian",
+        "indpak",
         "persian",
-        "iranian",
         "thai",
         "vietnamese"
       )
     );
     cousines.put(
       "green_hoppy",
-      Arrays.asList("barbeque", "caribbean", "turkish")
+      Arrays.asList("bbq", "caribbean", "turkish")
     );
     cousines.put(
       "roasted_toasted",
-      Arrays.asList("barbeque", "indian", "moroccan", "turkish")
+      Arrays.asList("bbq", "indpak", "moroccan", "turkish")
     );
     cousines.put(
       "spicy",
-      Arrays.asList("indian", "turkish")
+      Arrays.asList("indpak", "turkish")
     );
     cousines.put(
       "toffee_caramel",
       Arrays.asList(
         "caribbean",
-        "indian",
+        "indpak",
         "persian",
-        "iranian",
         "russian",
         "turkish"
       )
@@ -138,6 +136,7 @@ public class Service implements Container {
         joiner.toString()
       );
       Businesses business = gson.fromJson(yelpPlaces, Businesses.class);
+      business = (business == null) ? new Businesses() : business;
 
       headers(response);
       PrintStream body = response.getPrintStream();

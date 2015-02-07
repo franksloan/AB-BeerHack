@@ -26,12 +26,18 @@ public class Businesses {
     this.businesses = businesses;
   }
 
-  public Businesses(Business[] businesses) {
+  public Businesses() {
+  }
 
+  public Businesses(Business[] businesses) {
     this.businesses = businesses;
   }
 
   public List<Place> places() {
+    if (businesses == null || businesses.length == 0) {
+      return Collections.emptyList();
+    }
+
     List<Place> places = new ArrayList<>();
     for (Business business : businesses) {
       StringJoiner joiner = new StringJoiner(",");

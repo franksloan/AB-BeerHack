@@ -3,6 +3,7 @@ package com.garagehack;
 import com.beust.jcommander.JCommander;
 import com.beust.jcommander.Parameter;
 import org.apache.commons.lang.StringUtils;
+import org.apache.log4j.Logger;
 import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
@@ -30,6 +31,8 @@ import java.util.*;
  * Documentation</a> for more info.
  */
 public class YelpAPI {
+
+  public static final Logger log = Logger.getLogger(YelpAPI.class);
 
   private static final String API_HOST = "api.yelp.com";
   private static final String DEFAULT_TERM = "dinner";
@@ -97,6 +100,16 @@ public class YelpAPI {
     if (cache.containsKey(hash)) {
       return cache.get(hash);
     }
+
+    log.debug(
+      String.format(
+        "Request: term=[%s], location=[%s],categories=[%s],coordinated=[%s]",
+        term,
+        location,
+        categories,
+        coordinates
+      )
+    );
 
     OAuthRequest request = createOAuthRequest(SEARCH_PATH);
     request.addQuerystringParameter("term", term);
