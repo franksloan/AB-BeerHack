@@ -29,6 +29,9 @@ public class Service implements Container {
 
   public static final Logger log = Logger.getLogger(Service.class);
 
+  // hack - default profile if not found
+  private static final String DEFAULT_PROFILE = "fruity";
+
   private Map<String, List<String>> cousines = new HashMap<>();
 
   private final YelpAPI yelp;
@@ -52,7 +55,7 @@ public class Service implements Container {
         "indpak",
         "persian",
         "thai",
-          "vietnamese"
+        "vietnamese"
       )
     );
     cousines.put(
@@ -75,6 +78,27 @@ public class Service implements Container {
         "persian",
         "russian",
         "turkish"
+      )
+    );
+
+    cousines.put(
+      "cider",
+      Arrays.asList(
+        "caribbean",
+        "moroccan",
+        "turkish"
+      )
+    );
+
+    cousines.put(
+      "floral",
+      Arrays.asList(
+        "bbq",
+        "fishnchips",
+        "indpack",
+        "persian",
+        "thai",
+        "vietnamese"
       )
     );
 
@@ -120,12 +144,15 @@ public class Service implements Container {
         );
 
       String profile = beerDetails.getFlavorProfile();
+      if(profile == null){
+        beerDetails.setFlavorProfile(DEFAULT_PROFILE);
+      }
 
       List<String> filterCategories = (profile !=
-        null) ? cousines.get(profile) : Collections.emptyList();
+        null) ? cousines.get(profile) : cousines.get(DEFAULT_PROFILE);
 
       StringJoiner joiner = new StringJoiner(",");
-      if(filterCategories != null) {
+      if (filterCategories != null) {
         for (String cats : filterCategories) {
           joiner.add(cats);
         }
