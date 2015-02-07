@@ -87,7 +87,8 @@ body {
 
 button {
   appearance: none;
-  border: 3px solid white;
+  border: 0 solid white;
+  padding: 6px 16px 6px;
   border-radius: 2px;
   outline: none;
   background-color: mix( white, $ab-light-orange, 95 );
@@ -95,12 +96,13 @@ button {
   font-size: 1.3rem;
   box-shadow: 5px 5px 0 0 rgba( black, .075 );
   margin-right: 4px;
-  transition: transform .25s;
+  transition: all .25s;
+  transform: translate3d(0,0,0) scale( 1 );
 
   &:hover {
     z-index: 2;
     box-shadow: 5px 5px 0 0 rgba( black, .1 );
-    transform: scale( 1.05 );
+    transform: translate3d(0,0,0) scale( 1.05 );
     background-color: white;
   }
 }

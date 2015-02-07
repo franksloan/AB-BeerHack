@@ -30,6 +30,8 @@
 }
 
 .beer-info-btn-container {
+  @include clearfix;
+
   padding: 0 15px;
 
   @media screen and ( min-width: 600px ) {
@@ -46,9 +48,15 @@
 }
 
 .beer-info-back {
-
+  float: left;
 }
 
 .beer-info-find {
+  float: right;
+  background: $ab-bright-red;
+  color: white;
 
+  &:hover {
+    background: darken( $ab-bright-red, 10 );
+  }
 }

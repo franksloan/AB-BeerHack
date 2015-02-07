@@ -22,9 +22,15 @@
 }
 
 .byob-info-back {
-
+  float: left;
 }
 
 .byob-info-launch {
+  float: right;
+  background: $ab-bright-red;
+  color: white;
 
+  &:hover {
+    background: darken( $ab-bright-red, 10 );
+  }
 }
