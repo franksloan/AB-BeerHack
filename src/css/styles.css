@@ -351,9 +351,6 @@ button {
   -webkit-transition: -webkit-transform 0.25s, -webkit-box-shadow 0.25s;
   transition: transform 0.25s, box-shadow 0.25s;
   margin-right: 10px; }
-  /* line 73, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
-  .beer-select-item.missing {
-    display: none; }
   /* line 77, /Users/markdurrant/repos/AB-BeerHack/src/sass/_beer-select.scss */
   .beer-select-item:nth-child(even) {
     margin-right: 0; }
