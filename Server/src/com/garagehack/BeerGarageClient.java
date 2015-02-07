@@ -13,9 +13,7 @@ import org.apache.log4j.Logger;
 import org.json.JSONObject;
 
 import java.io.IOException;
-import java.util.Base64;
-import java.util.Collections;
-import java.util.List;
+import java.util.*;
 
 /**
  * @author Maxim Galushka
@@ -29,8 +27,16 @@ public class BeerGarageClient {
 
   public static String AUTH_TOKEN = "VNYcdeSwu3gEKw1r";
 
+  private static final Map<String, List<BeerDetails>> cache = new HashMap<>();
+
   public static List<BeerDetails> queryBeerProfiles(String name)
   throws IOException {
+
+    // caching slow beer details
+    if (cache.containsKey(name)) {
+      return cache.get(name);
+    }
+
     boolean success = false;
     while (!success) {
       try {
@@ -42,6 +48,8 @@ public class BeerGarageClient {
             beers
           )
         );
+
+        cache.put(name, beers.getBeers());
         return beers.getBeers();
       } catch (GarageAuthException authError) {
         try {
