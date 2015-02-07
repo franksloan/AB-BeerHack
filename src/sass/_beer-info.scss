@@ -29,6 +29,22 @@
 
 }
 
+.beer-info-btn-container {
+  padding: 0 15px;
+
+  @media screen and ( min-width: 600px ) {
+    padding: 0 30px;
+  }
+
+  @media screen and ( min-width: 900px ) {
+    padding: 0 60px;
+  }
+
+  @media screen and ( min-width: 1200px ) {
+    padding: 0 90px;
+  }
+}
+
 .beer-info-back {
 
 }

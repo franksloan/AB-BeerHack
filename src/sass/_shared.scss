@@ -34,7 +34,7 @@ body {
   position: absolute;
   width: 400%;
   height: 100%;
-  transition: left .35s cubic-bezier(0, 1.1, 0.9, 1.1);
+  transition: left .25s;
 
   &.pos-1 {
     left: 0;
@@ -62,7 +62,7 @@ body {
   background-color: $ab-light-orange;
 
   &:nth-child(even) {
-    background-color: $ab-dark-orange;
+    background-color: mix( $ab-light-orange, $ab-dark-orange );
   }
 }
 
@@ -82,5 +82,25 @@ body {
     @media screen and ( min-width: 450px ) {
       font-size: 3rem;
     }
+  }
+}
+
+button {
+  appearance: none;
+  border: 3px solid white;
+  border-radius: 2px;
+  outline: none;
+  background-color: mix( white, $ab-light-orange, 95 );
+  font-weight: 500;
+  font-size: 1.3rem;
+  box-shadow: 5px 5px 0 0 rgba( black, .075 );
+  margin-right: 4px;
+  transition: transform .25s;
+
+  &:hover {
+    z-index: 2;
+    box-shadow: 5px 5px 0 0 rgba( black, .1 );
+    transform: scale( 1.05 );
+    background-color: white;
   }
 }
