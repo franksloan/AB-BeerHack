@@ -1,0 +1,86 @@
+Alexander Keith's Cider	cider
+Alexander Keith's India Pale Ale	green_hoppy
+Bass Pale Ale	toffee_caramel
+BASS PREMIUM PALE ALE	toffee_caramel
+Beck's	green_hoppy
+Beck's Dark	toffee_caramel
+BECK'S PREMIER LIGHT	green_hoppy
+BECK'S VIER	green_hoppy
+BELLE VUE FRAMBOISE EXTRA	fruity
+BELLE VUE GUEUZE	fruity
+BELLE VUE KRIEK CLASSIQUE	fruity
+BELLE VUE KRIEK EXTRA	fruity
+BODDINGTON'S DRAUGHT	toffee_caramel
+Boddingtons Pub Ale	toffee_caramel
+BRAHMA	fruity
+Brahma Chopp	fruity
+Bud Ice	fruity
+Bud Light	fruity
+Bud Light Chelada	citrus_zesty
+Bud Light Lime	citrus_zesty
+Bud Light Lime Lime-A-Rita	citrus_zesty
+Bud Light Platinum	fruity
+Budweiser	fruity
+Budweiser 66	fruity
+Budweiser Black Crown	fruity
+BUDWEISER BREW NO. 66	fruity
+Budweiser Chelada	citrus_zesty
+Budweiser Chelada Picante	spicy
+Budweiser Draft	fruity
+BUDWEISER Draught	fruity
+Budweiser NA	fruity
+Busch	fruity
+Busch Ice	fruity
+Busch Light	fruity
+Chernigivske exotic Beermix Apple Cider	cider
+FRANZISKANER ROYAL	fruity
+FRANZISKANER WEIZEN DUNKEL	toffee_caramel
+FRANZISKANER WEIZEN HELL	fruity
+FRANZISKANER WEIZEN KRISTALL	fruity
+GOLD LABEL	fruity
+Harbin Ice	green_hoppy
+Harbin Ice Light	green_hoppy
+HERTOG JAN BOCKBIER	toffee_caramel
+HERTOG JAN GRAND PRESTIGE	roasted_toasted
+HERTOG JAN LENTEBOCK	fruity
+HERTOG JAN PILS	fruity
+HERTOG JAN WEIZENER	fruity
+Hoegaarden	citrus_zesty
+HOEGAARDEN CITRON	citrus_zesty
+HOEGAARDEN FORBIDDEN FRUIT	toffee_caramel
+HOEGAARDEN GRAND CRU	fruity
+HOEGAARDEN JULIUS	fruity
+HOEGAARDEN ROSEE	fruity
+Johnny Appleseed Hard Apple Cider	cider
+Löwenbräu	fruity
+Leffe Blonde	spicy
+Leffe Brown	toffee_caramel
+LEFFE CHRISTMAS	toffee_caramel
+LEFFE NECTAR	floral
+LEFFE RADIEUSE	spicy
+LEFFE RITUEL 9°	fruity
+LEFFE ROYALE	citrus_zesty
+LEFFE RUBY	fruity
+LEFFE TRIPLE	spicy
+MACKESON STOUT	roasted_toasted
+Michelob ULTRA	fruity
+Michelob ULTRA Amber	toffee_caramel
+Michelob ULTRA Light Cider	cider
+Modelo Especial	green_hoppy
+Negra Modelo	roasted_toasted
+Quilmes Cristal	fruity
+Select 55	fruity
+Select from Budweiser	fruity
+Shock Top Belgian White	citrus_zesty
+Shock Top Lemon Shandy	citrus_zesty
+Shock Top Pumpkin Wheat	spicy
+Shock Top Raspberry Wheat	fruity
+Spaten Dunkel	toffee_caramel
+Spaten Optimator	toffee_caramel
+Stella Artois	green_hoppy
+STELLA ARTOIS 4%	green_hoppy
+Stella Artois Cidre	cider
+STELLA ARTOIS CIDRE APPLE	fruity
+STELLA ARTOIS CIDRE PEAR	fruity
+STELLA ARTOIS NON ALCOHOL	green_hoppy
+Stella Artois Non Alcoholic	green_hoppy
