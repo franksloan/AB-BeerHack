@@ -5,7 +5,7 @@ mvn install dependency:copy-dependencies
 #mvn dependency:copy-dependencies
 
 echo 'Stopping server'
-ps aux | grep 'beergaragehack' | awk '{print $2}' | kill -9
+kill -9 `ps aux | grep 'beergaragehack' | awk '{print $2}'`
 
 echo 'Starting server'
 
