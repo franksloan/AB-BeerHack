@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo 'Pulling new code'
+git pull --rebase
+
 echo 'Making new build'
 mvn install dependency:copy-dependencies
 #mvn dependency:copy-dependencies
