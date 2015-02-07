@@ -17,4 +17,5 @@ JAVA_MEM="-Xms512m -Xmx512m"
 JAVA_GC="-verbose:gc"
 
 nohup java -cp ${CLASSPATH} ${JAVA_MEM} ${JAVA_GC} com.garagehack.service.Service > out.log 2>&1 &
-echo 0
+
+./cache.bash
