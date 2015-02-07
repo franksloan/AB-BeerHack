@@ -31,15 +31,56 @@
     wrapElm.removeClass( 'pos-2' );
   });
 
-  // replace with actuall items
-  byobMapPage.click( function() {
-    wrapElm.addClass( 'pos-4' );
-    wrapElm.removeClass( 'pos-3' );
-  });
-
   byobInfoBackBtn.click( function() {
     wrapElm.addClass( 'pos-3' );
     wrapElm.removeClass( 'pos-4' );
   });
+
+  var mapColors = [
+    {
+      "stylers": [
+        { "color": "#ecd68d" }
+      ]
+    },{
+      "featureType": "water",
+      "stylers": [
+        { "color": "#ecd68d" },
+        { "hue": "#ff3300" }
+      ]
+    },{
+      "featureType": "landscape.man_made",
+      "stylers": [
+        { "color": "#ecd68d" },
+        { "hue": "#ffff00" },
+        { "lightness": 17 },
+        { "saturation": 70 }
+      ]
+    },{
+      "featureType": "road",
+      "elementType": "labels.text.fill",
+      "stylers": [
+        { "color": "#ecd68d" },
+        { "hue": "#ff4d00" },
+        { "saturation": 1 },
+        { "lightness": -32 }
+      ]
+    },{
+      "featureType": "transit.station.rail",
+      "elementType": "labels.text"  },{
+    }
+  ];
+
+  // G maps
+  function initialize() {
+      var mapOptions = {
+        center: { lat: 51.5079, lng: -0.131782 },
+        zoom: 14,
+        disableDefaultUI: true,
+        styles: mapColors
+      };
+      var map = new google.maps.Map(document.getElementById('map-canvas'),
+          mapOptions);
+    }
+    google.maps.event.addDomListener(window, 'load', initialize);
 
 }()); // end 'use strict'

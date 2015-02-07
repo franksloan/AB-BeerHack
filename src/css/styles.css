@@ -457,6 +457,14 @@ button {
 .page.byob-map {
   left: 50%; }
 
+/* line 8, /Users/markdurrant/repos/AB-BeerHack/src/sass/_byob-map.scss */
+.byob-map-canvas {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0; }
+
 /* line 4, /Users/markdurrant/repos/AB-BeerHack/src/sass/_byob-info.scss */
 .page.byob-info {
   left: 75%; }
