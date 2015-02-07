@@ -89,8 +89,13 @@ public class YelpAPI {
     String coordinates,
     String categories
   ) {
-    if (cache.containsKey(term)) {
-      return cache.get(term);
+    String hash = String.format(
+      "%s_%s",
+      term,
+      categories
+    );
+    if (cache.containsKey(hash)) {
+      return cache.get(hash);
     }
 
     OAuthRequest request = createOAuthRequest(SEARCH_PATH);
@@ -104,7 +109,7 @@ public class YelpAPI {
     request.addQuerystringParameter("limit", String.valueOf(SEARCH_LIMIT));
 
     String json = sendRequestAndGetResponse(request);
-    cache.put(term, json);
+    cache.put(hash, json);
     return json;
   }
 
