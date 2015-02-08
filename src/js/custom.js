@@ -10,20 +10,20 @@ $('button.beer-info-find').click(function () {
 	getLocation();
 });
 
-window.onload = function() {
+window.onload = function () {
 
-    var randomBeer = new Shake({
-        threshold: 15
-    });
+	var randomBeer = new Shake({
+		threshold: 15
+	});
 
-    randomBeer.start();
+	randomBeer.start();
 
-    window.addEventListener('shake', randomBeerEvent, false);
+	window.addEventListener('shake', randomBeerEvent, false);
 
-    function randomBeerEvent () {
-        beers = $('.beer-select-item');
-        $(beers[Math.floor(Math.random()*beers.length)]).click();
-    }
+	function randomBeerEvent() {
+		beers = $('.beer-select-item');
+		$(beers[Math.floor(Math.random() * beers.length)]).click();
+	}
 };
 
 function getLocation() {
@@ -53,7 +53,7 @@ function search(name, locationLat, locationLong) {
 
 			var position = new google.maps.LatLng(listing.latitude, listing.longitude);
 			var infowindow = new google.maps.InfoWindow({
-				content: '<p><strong>Name: </strong>' + listing.name + '<br /><strong>Address: </strong><a href="http://maps.apple.com/?daddr=' + encodeURIComponent(listing.address) + '">' + listing.address + '</a><br /><strong>Phone Number: </strong><a href="tel:'+ listing.phone +'">' + listing.phone + '</a></p>'
+				content: '<p><strong>Name: </strong>' + listing.name + '<br /><strong>Address: </strong><a href="http://maps.apple.com/?daddr=' + encodeURIComponent(listing.address) + '">' + listing.address + '</a><br /><strong>Phone Number: </strong><a href="tel:' + listing.phone + '">' + listing.phone + '</a></p>'
 			});
 
 			var marker = new google.maps.Marker({
