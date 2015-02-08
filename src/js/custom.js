@@ -48,6 +48,7 @@ function search(name, locationLat, locationLong) {
 	};
 
 	var pinColor = {
+		byob: 'FD7567',
 		sainsburys: 'EE8901',
 		tesco: '0053A0'
 	};
@@ -58,29 +59,17 @@ function search(name, locationLat, locationLong) {
 
 			var position = new google.maps.LatLng(listing.latitude, listing.longitude);
 			var infowindow = new google.maps.InfoWindow({
-				content: '<p><strong>Name: </strong>' + listing.name + '<br /><strong>Address: </strong><a href="http://maps.apple.com/?daddr=' + encodeURIComponent(listing.address) + '">' + listing.address + '</a><br /><strong>Phone Number: </strong><a href="tel:' + listing.phone + '">' + listing.phone + '</a></p>'
+				content: '<p class="info_window"><strong>Name: </strong>' + listing.name + '<br /><strong>Address: </strong><a href="http://maps.apple.com/?daddr=' + encodeURIComponent(listing.address) + '">' + listing.address + '</a><br /><strong>Phone Number: </strong><a href="tel:' + listing.phone + '">' + listing.phone + '</a></p>'
 			});
 
-			if(listing.type != 'byob') {
+			var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor[listing.type]);
 
-				var pinImage = new google.maps.MarkerImage("http://chart.apis.google.com/chart?chst=d_map_pin_letter&chld=%E2%80%A2|" + pinColor[listing.type]);
-	
-				var marker = new google.maps.Marker({
-					icon: pinImage,
-					position: position,
-					map: map,
-					title: listing.name
-				});
-				
-			} else {
-
-				var marker = new google.maps.Marker({
-					position: position,
-					map: map,
-					title: listing.name
-				});
-				
-			}
+			var marker = new google.maps.Marker({
+				icon: pinImage,
+				position: position,
+				map: map,
+				title: listing.name
+			});
 
 			google.maps.event.addListener(marker, 'click', function () {
 
