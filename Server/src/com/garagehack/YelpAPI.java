@@ -98,9 +98,11 @@ public class YelpAPI {
       term,
       categories
     );
+    /*
     if (cache.containsKey(hash)) {
       return cache.get(hash);
     }
+    */
 
     log.debug(
       String.format(
@@ -125,7 +127,7 @@ public class YelpAPI {
     request.addQuerystringParameter("limit", String.valueOf(SEARCH_LIMIT));
 
     String json = sendRequestAndGetResponse(request);
-    cache.put(hash, json);
+    //cache.put(hash, json);
     return json;
   }
 
