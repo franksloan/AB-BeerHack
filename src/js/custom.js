@@ -10,6 +10,22 @@ $('button.beer-info-find').click(function () {
 	getLocation();
 });
 
+window.onload = function() {
+
+    var randomBeer = new Shake({
+        threshold: 15
+    });
+
+    randomBeer.start();
+
+    window.addEventListener('shake', randomBeerEvent, false);
+
+    function randomBeerEvent () {
+        beers = $('.beer-select-item');
+        $(beers[Math.floor(Math.random()*beers.length)]).click();
+    }
+};
+
 function getLocation() {
 
 	navigator.geolocation.getCurrentPosition(function (position) {

@@ -16,7 +16,23 @@
       byobInfoBackBtn = $( '.byob-info-back' );
 
   // dirty page switching
-  beerItemElm.click( function() {
+  beerItemElm.click( function() {  
+	  
+	var beerItem = this; 
+	  
+	var data = {
+		name: $(this).data('beer'),
+	};
+
+	$.getJSON(endpoint, data, function (json) {
+		$('h2.beer-info-name').text(json.details.name);
+		$('img.beer-info-img').attr('src', $(beerItem).find('img.beer-select-img').attr('src'));
+		$('span.beer-info-flavour').text(json.details.flavorProfile);
+		$('span.beer-info-grains').text(json.details.grains);
+		$('span.beer-info-abv').text(json.details.abv);
+		$('span.beer-info-description').text(json.details.description);
+	});  
+	  
     wrapElm.addClass( 'pos-2' );
     wrapElm.removeClass( 'pos-1' );
   });
