@@ -195,34 +195,38 @@ public class Service implements Container {
 
       List<Place> allPlaces = new ArrayList<>(business.places("byob"));
 
-      String tescoPlaces = yelp.searchForBusinessesByLocation(
-        "tesco",
-        "London",
-        location,
-        joiner.toString(),
-        2000
-      );
-      Businesses tescoBusiness = gson.fromJson(tescoPlaces, Businesses.class);
-      tescoBusiness = (tescoBusiness ==
-        null) ? new Businesses() : tescoBusiness;
+      try {
+        String tescoPlaces = yelp.searchForBusinessesByLocation(
+          "tesco",
+          "London",
+          location,
+          joiner.toString(),
+          2000
+        );
+        Businesses tescoBusiness = gson.fromJson(tescoPlaces, Businesses.class);
+        tescoBusiness = (tescoBusiness ==
+          null) ? new Businesses() : tescoBusiness;
 
-      String sainsburysPlaces = yelp.searchForBusinessesByLocation(
-        "sainsburys",
-        "London",
-        location,
-        joiner.toString(),
-        2000
-      );
-      Businesses sainsburysBusiness = gson.fromJson(
-        sainsburysPlaces,
-        Businesses.class
-      );
-      sainsburysBusiness = (sainsburysBusiness ==
-        null) ? new Businesses() : sainsburysBusiness;
+        String sainsburysPlaces = yelp.searchForBusinessesByLocation(
+          "sainsburys",
+          "London",
+          location,
+          joiner.toString(),
+          2000
+        );
+        Businesses sainsburysBusiness = gson.fromJson(
+          sainsburysPlaces,
+          Businesses.class
+        );
+        sainsburysBusiness = (sainsburysBusiness ==
+          null) ? new Businesses() : sainsburysBusiness;
 
-      allPlaces.addAll(tescoBusiness.places("tesco"));
-      allPlaces.addAll(sainsburysBusiness.places("sainsburys"));
+        allPlaces.addAll(tescoBusiness.places("tesco"));
+        allPlaces.addAll(sainsburysBusiness.places("sainsburys"));
 
+      } catch (Exception e) {
+        e.printStackTrace();
+      }
 
       headers(response);
       PrintStream body = response.getPrintStream();
