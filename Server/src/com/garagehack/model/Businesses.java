@@ -40,18 +40,6 @@ public class Businesses {
 
     List<Place> places = new ArrayList<>();
     for (Business business : businesses) {
-      StringJoiner joiner = new StringJoiner(",");
-
-      Set<String> cats = new TreeSet<>();
-      for (int i = 0; i < business.getCategories().length; i++) {
-        cats.addAll(Arrays.asList(business.getCategories()[i]));
-      }
-
-      for (String s : cats) {
-        joiner.add(s.toLowerCase());
-      }
-      String categoriesList = joiner.toString();
-
       StringJoiner addressJoiner = new StringJoiner("\n");
       for (String addressBit : business.getLocation().getAddress()) {
         addressJoiner.add(addressBit);

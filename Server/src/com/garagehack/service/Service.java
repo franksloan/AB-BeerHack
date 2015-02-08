@@ -22,6 +22,8 @@ import java.io.IOException;
 import java.io.PrintStream;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
+import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.*;
 
 /**
@@ -176,7 +178,16 @@ public class Service implements Container {
       );
       beerDetails.setDescription(description);
 
-      //beerDetails.getAbv();
+      try {
+        Double abv = Double.parseDouble(beerDetails.getAbv());
+        String abvNew = new DecimalFormat(
+          "#.0#####",
+          DecimalFormatSymbols.getInstance(Locale.ENGLISH)
+        ).format(abv);
+        beerDetails.setAbv(abvNew);
+      } catch (Exception e){
+
+      }
 
       StringJoiner joiner = new StringJoiner(",");
       if (filterCategories != null) {
