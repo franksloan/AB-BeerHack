@@ -176,6 +176,8 @@ public class Service implements Container {
       );
       beerDetails.setDescription(description);
 
+      //beerDetails.getAbv();
+
       StringJoiner joiner = new StringJoiner(",");
       if (filterCategories != null) {
         for (String cats : filterCategories) {
@@ -200,7 +202,7 @@ public class Service implements Container {
           "tesco",
           "London",
           location,
-          joiner.toString(),
+          "",
           2000
         );
         Businesses tescoBusiness = gson.fromJson(tescoPlaces, Businesses.class);
@@ -211,7 +213,7 @@ public class Service implements Container {
           "sainsburys",
           "London",
           location,
-          joiner.toString(),
+          "",
           2000
         );
         Businesses sainsburysBusiness = gson.fromJson(

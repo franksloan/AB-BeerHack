@@ -57,17 +57,21 @@ public class Businesses {
         addressJoiner.add(addressBit);
       }
 
-      places.add(
-        new Place(
-          business.getName(),
-          business.getCategories()[0][0],
-          addressJoiner.toString(),
-          business.getPhone(),
-          business.getLocation().getCoordinate().getLatitude(),
-          business.getLocation().getCoordinate().getLongitude(),
-          type
-        )
-      );
+      try {
+        places.add(
+          new Place(
+            business.getName(),
+            business.getCategories()[0][0],
+            addressJoiner.toString(),
+            business.getPhone(),
+            business.getLocation().getCoordinate().getLatitude(),
+            business.getLocation().getCoordinate().getLongitude(),
+            type
+          )
+        );
+      }catch(Exception e){
+
+      }
     }
 
     return places;
