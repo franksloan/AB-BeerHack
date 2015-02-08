@@ -5,7 +5,9 @@ import com.garagehack.YelpAPI;
 import com.garagehack.model.BeerDetails;
 import com.garagehack.model.Businesses;
 import com.garagehack.response.Beer;
+import com.garagehack.response.Place;
 import com.google.gson.Gson;
+import org.apache.commons.lang.StringEscapeUtils;
 import org.apache.commons.lang.StringUtils;
 import org.apache.log4j.Logger;
 import org.simpleframework.http.Request;
@@ -33,6 +35,7 @@ public class Service implements Container {
   private static final String DEFAULT_PROFILE = "fruity";
 
   private Map<String, List<String>> cousines = new HashMap<>();
+  private Map<String, String> betterNames = new HashMap<>();
 
   private final YelpAPI yelp;
 
@@ -102,6 +105,15 @@ public class Service implements Container {
       )
     );
 
+    betterNames.put("citrus_zesty", "Citrus Zesty");
+    betterNames.put("fruity", "Fruity");
+    betterNames.put("green_hoppy", "Green Hoppy");
+    betterNames.put("roasted_toasted", "Roasterd Toasted");
+    betterNames.put("spicy", "Spicy");
+    betterNames.put("toffee_caramel", "Toffee Caramel");
+    betterNames.put("cider", "Cider");
+    betterNames.put("floral", "Floral");
+
   }
 
   public void headers(Response response) {
@@ -144,12 +156,25 @@ public class Service implements Container {
         );
 
       String profile = beerDetails.getFlavorProfile();
-      if(profile == null){
+      if (profile == null) {
         beerDetails.setFlavorProfile(DEFAULT_PROFILE);
       }
 
       List<String> filterCategories = (profile !=
         null) ? cousines.get(profile) : cousines.get(DEFAULT_PROFILE);
+
+      beerDetails.setFlavorProfile(
+        betterNames.get(
+          beerDetails
+            .getFlavorProfile()
+        )
+      );
+
+      String description = StringEscapeUtils.unescapeJava(
+        beerDetails
+          .getDescription()
+      );
+      beerDetails.setDescription(description);
 
       StringJoiner joiner = new StringJoiner(",");
       if (filterCategories != null) {
@@ -162,17 +187,49 @@ public class Service implements Container {
         "byob",
         "London",
         location,
-        joiner.toString()
+        joiner.toString(),
+        5000
       );
       Businesses business = gson.fromJson(yelpPlaces, Businesses.class);
       business = (business == null) ? new Businesses() : business;
+
+      List<Place> allPlaces = new ArrayList<>(business.places("byob"));
+
+      String tescoPlaces = yelp.searchForBusinessesByLocation(
+        "tesco",
+        "London",
+        location,
+        joiner.toString(),
+        2000
+      );
+      Businesses tescoBusiness = gson.fromJson(tescoPlaces, Businesses.class);
+      tescoBusiness = (tescoBusiness ==
+        null) ? new Businesses() : tescoBusiness;
+
+      String sainsburysPlaces = yelp.searchForBusinessesByLocation(
+        "sainsburys",
+        "London",
+        location,
+        joiner.toString(),
+        2000
+      );
+      Businesses sainsburysBusiness = gson.fromJson(
+        sainsburysPlaces,
+        Businesses.class
+      );
+      sainsburysBusiness = (sainsburysBusiness ==
+        null) ? new Businesses() : sainsburysBusiness;
+
+      allPlaces.addAll(tescoBusiness.places("tesco"));
+      allPlaces.addAll(sainsburysBusiness.places("sainsburys"));
+
 
       headers(response);
       PrintStream body = response.getPrintStream();
       Beer beerResponse = new Beer(
         name,
         beerDetails,
-        business.places()
+        allPlaces
       );
 
       body.println(gson.toJson(beerResponse));

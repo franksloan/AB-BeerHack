@@ -11,6 +11,8 @@ public class BeerDetails {
   private List<String> countries;
   private String description;
   private String flavorProfile;
+  private String abv;
+  private String grains;
 
   public BeerDetails() {
   }
@@ -45,6 +47,22 @@ public class BeerDetails {
 
   public void setDescription(String description) {
     this.description = description;
+  }
+
+  public String getAbv() {
+    return abv;
+  }
+
+  public void setAbv(String abv) {
+    this.abv = abv;
+  }
+
+  public String getGrains() {
+    return grains;
+  }
+
+  public void setGrains(String grains) {
+    this.grains = grains;
   }
 
   @Override

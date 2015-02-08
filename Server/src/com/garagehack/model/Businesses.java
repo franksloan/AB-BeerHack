@@ -33,7 +33,7 @@ public class Businesses {
     this.businesses = businesses;
   }
 
-  public List<Place> places() {
+  public List<Place> places(String type) {
     if (businesses == null || businesses.length == 0) {
       return Collections.emptyList();
     }
@@ -64,7 +64,8 @@ public class Businesses {
           addressJoiner.toString(),
           business.getPhone(),
           business.getLocation().getCoordinate().getLatitude(),
-          business.getLocation().getCoordinate().getLongitude()
+          business.getLocation().getCoordinate().getLongitude(),
+          type
         )
       );
     }

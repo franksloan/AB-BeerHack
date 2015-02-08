@@ -2,6 +2,8 @@ package com.garagehack.model;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.Arrays;
+
 /**
  * @author Maxim Galushka
  */
@@ -20,6 +22,8 @@ public class Business {
   private String phone;
 
   private String[][] categories;
+
+  private String type;
 
   public Business(
     String name,
@@ -85,6 +89,14 @@ public class Business {
     this.categories = categories;
   }
 
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
   @Override
   public String toString() {
     return "Business{" +
@@ -93,7 +105,8 @@ public class Business {
       ", description='" + description + '\'' +
       ", location=" + location +
       ", phone='" + phone + '\'' +
+      ", categories=" + Arrays.toString(categories) +
+      ", type='" + type + '\'' +
       '}';
   }
-
 }

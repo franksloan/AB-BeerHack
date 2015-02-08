@@ -11,6 +11,7 @@ public class Place {
   private String phone;
   private double latitude;
   private double longitude;
+  private String type;
 
   public Place(
     String name,
@@ -18,7 +19,8 @@ public class Place {
     String address,
     String phone,
     double latitude,
-    double longitude
+    double longitude,
+    String type
   ) {
     this.name = name;
     this.cuisine = cuisine;
@@ -26,6 +28,7 @@ public class Place {
     this.phone = phone;
     this.latitude = latitude;
     this.longitude = longitude;
+    this.type = type;
   }
 
   public String getName() {
@@ -76,6 +79,14 @@ public class Place {
     this.longitude = longitude;
   }
 
+  public String getType() {
+    return type;
+  }
+
+  public void setType(String type) {
+    this.type = type;
+  }
+
   @Override
   public String toString() {
     return "Place{" +
@@ -85,6 +96,7 @@ public class Place {
       ", phone='" + phone + '\'' +
       ", latitude=" + latitude +
       ", longitude=" + longitude +
+      ", type='" + type + '\'' +
       '}';
   }
 }

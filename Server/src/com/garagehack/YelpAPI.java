@@ -90,7 +90,8 @@ public class YelpAPI {
     String term,
     String location,
     String coordinates,
-    String categories
+    String categories,
+    int radius
   ) {
     String hash = String.format(
       "%s_%s",
@@ -103,11 +104,12 @@ public class YelpAPI {
 
     log.debug(
       String.format(
-        "Request: term=[%s], location=[%s],categories=[%s],coordinated=[%s]",
+        "Request: term=[%s], location=[%s],categories=[%s],coordinated=[%s],redius=[%d]",
         term,
         location,
         categories,
-        coordinates
+        coordinates,
+        radius
       )
     );
 
@@ -118,6 +120,7 @@ public class YelpAPI {
       request.addQuerystringParameter("category_filter", categories);
     }
     request.addQuerystringParameter("cll", coordinates);
+    request.addQuerystringParameter("radius_filter", Integer.toString(radius));
 
     request.addQuerystringParameter("limit", String.valueOf(SEARCH_LIMIT));
 
@@ -183,7 +186,8 @@ public class YelpAPI {
         yelpApiCli.term,
         yelpApiCli.location,
         "",
-        ""
+        "",
+        1000
       );
 
     JSONParser parser = new JSONParser();

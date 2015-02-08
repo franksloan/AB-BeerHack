@@ -21,13 +21,14 @@ public class QueryPlacesNearby {
       "byob",
       "London",
       "51.5033630,-0.1276250",
-      ""
+      "",
+      5000
     );
 
     Gson gson = new Gson();
     Businesses business = gson.fromJson(results, Businesses.class);
 
     System.out.println(business);
-    System.out.println(business.places());
+    System.out.println(business.places("shop"));
   }
 }
